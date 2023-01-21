@@ -2,15 +2,13 @@ import React from 'react';
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from '../App';
-import Pokedex from '../pages/Pokedex';
 import renderWithRouter from '../renderWithRouter';
 import pokemonList from '../data';
 
 describe('Teste o componente <Pokedex.js />', () => {
   const pokemonName = 'pokemon-name';
   it('Teste se a página contém um heading h2 com o texto Encountered Pokémon;', () => {
-    // renderWithRouter(<Pokedex pokemonList={ pokemonList } isPokemonFavoriteById={ [] } />);
-		renderWithRouter(<App />);
+    renderWithRouter(<App />);
     expect(screen.getByRole('heading', { name: /encountered pokémon/i })).toBeInTheDocument();
   });
 
